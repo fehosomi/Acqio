@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Acqio.Clients.App">
+  <Application.Resources>
+
+    <ResourceDictionary>
+      <Color x:Key="EntryTextColor">Black</Color>
+      <Color x:Key="EntryBackgroundColor">White</Color>
+
+      <Color x:Key="ButtonTextColor">White</Color>
+      <Color x:Key="ButtonBackgroundColor">#162135</Color>
+
+      <Style x:Key="Title" TargetType="Label" >
+        <Setter Property="Font" Value="14,Bold" ></Setter>
+        <Setter Property="TextColor" Value="#162135" ></Setter>
+      </Style>
+
+      <Style x:Key="Label" TargetType="Label" >
+        <Setter Property="Font" Value="12" ></Setter>
+      </Style>
+
+      <Style x:Key="Entry" TargetType="Entry" >
+        <Setter Property="TextColor" Value="{StaticResource EntryTextColor}" ></Setter>
+        <Setter Property="BackgroundColor" Value="{StaticResource EntryBackgroundColor}" ></Setter>
+      </Style>
+
+      <Style x:Key="Button" TargetType="Button" >
+        <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" ></Setter>
+        <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" ></Setter>
+      </Style>
+    </ResourceDictionary>
+
+  </Application.Resources>
+</Application>

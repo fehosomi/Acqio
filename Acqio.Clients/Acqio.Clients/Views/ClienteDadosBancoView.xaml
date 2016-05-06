@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Acqio.Clients.Views.ClienteDadosBancoView"
+             Title="Dados Bancários">
+  <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <StackLayout Padding="20" Spacing="20">
+      <Label Text="Dados Bancários"></Label>
+      <Entry Text="{Binding TipoConta}" Placeholder="Tipo Conta" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Banco}" Placeholder="Banco" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Agencia}" Placeholder="Agência" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Conta}" Placeholder="Conta" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding VariacaoOperacao}" Placeholder="Variação/Operação" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding FatMes}" Placeholder="Fat. Esperado/Mês" Style="{StaticResource Entry}"></Entry>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

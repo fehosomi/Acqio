@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Acqio.Clients.Views.ClienteDadosComerciaisView"
+             Title="Dados Comerciais">
+  <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <StackLayout Padding="20" Spacing="20">
+      <Label Text="Dados Comerciais"></Label>
+      <Entry Text="{Binding ValorPos}" Placeholder="Valor Venda POS" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding FatPos}" Placeholder="Fat. Esperado/Mês" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding QtdeParcSemJuros}" Placeholder="Qtde. Parc. sem Juros Cliente" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding TaxaAntecipacao}" Placeholder="Taxa Antecip. Parcela" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding TaxaParcela}" Placeholder="Taxa por Parcela" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding TaxaDebito}" Placeholder="Taxa Débido" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding TaxaCredito}" Placeholder="Taxa Crédito" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding OutrasReceb}" Placeholder="Outras Formas Recebimento" Style="{StaticResource Entry}"></Entry>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

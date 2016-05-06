@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Acqio.Clients.Views.ClienteView"
+             xmlns:Views="clr-namespace:Acqio.Clients.Views;assembly=Acqio.Clients"
+             Title="Cliente">
+  <CarouselPage.Children>
+    <!--<Views:ClienteDadosEmpresaView />
+    <Views:ClienteDadosBancoView />
+    <Views:ClienteDadosComerciaisView />
+    <Views:ClienteDadosRepView />-->
+  </CarouselPage.Children>
+</CarouselPage>

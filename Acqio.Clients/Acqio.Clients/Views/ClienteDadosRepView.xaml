@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Acqio.Clients.Views.ClienteDadosRepView"
+             Title="Dados Representante Legal">
+  <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <StackLayout Padding="20" Spacing="20">
+      <Label Text="Dados Representante Legal"></Label>
+      <Entry Text="{Binding Nome}" Placeholder="Nome" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding DataNascimento}" Placeholder="Data Nascimento" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding NomeMae}" Placeholder="Nome da Mãe" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding RG}" Placeholder="RG" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Emissor}" Placeholder="Emissor" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding DataExpedicao}" Placeholder="Data Expedição" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding CPF}" Placeholder="CPF" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Profissao}" Placeholder="Profissão" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding EstadoCivil}" Placeholder="Estado Civil" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding NomeConjuge}" Placeholder="Nome Cônjuge" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Endereco}" Placeholder="Endereço" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Numero}" Placeholder="Número" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Complemento}" Placeholder="Complemento" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Bairro}" Placeholder="Bairro" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Cidade}" Placeholder="Cidade" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding UF}" Placeholder="UF" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding CEP}" Placeholder="CEP" Style="{StaticResource Entry}"></Entry>
+      <Entry Keyboard="Telephone" Text="{Binding Telefone}" Placeholder="Telefone" Style="{StaticResource Entry}"></Entry>
+      <Entry Keyboard="Telephone" Text="{Binding Celular}" Placeholder="Celular" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding Email}" Placeholder="E-mail" Style="{StaticResource Entry}"></Entry>
+
+      <Button x:Name="btnSave" Text="Salvar" Clicked="btnSaveClicked" Style="{StaticResource Button}"></Button>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>
