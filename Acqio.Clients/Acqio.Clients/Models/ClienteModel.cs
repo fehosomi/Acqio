@@ -71,18 +71,6 @@ namespace Acqio.Clients.Models
         public string Complemento { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
-        //private string estado;
-        //public string Estado { get
-        //    {
-        //        return estado;
-        //    }
-        //    set
-        //    {
-        //        estado = value;
-        //        this.Notify("Estado");
-        //    }
-        //}
-
         public string Estado { get; set; }
         public string CEP { get; set; }
         public string Telefone { get; set; }

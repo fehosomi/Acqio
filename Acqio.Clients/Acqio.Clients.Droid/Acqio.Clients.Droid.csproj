@@ -194,11 +194,6 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Acqio.Clients\Acqio.Clients.csproj">
-      <Name>Acqio.Clients</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\accounts.png" />
   </ItemGroup>
   <ItemGroup>

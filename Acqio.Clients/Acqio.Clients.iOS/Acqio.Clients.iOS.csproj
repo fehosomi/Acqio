@@ -105,11 +105,6 @@
     <BundleResource Include="Resources\tessdata\por.traineddata" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Acqio.Clients\Acqio.Clients.csproj">
-      <Name>Acqio.Clients</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\Default-Portrait.png" />
     <BundleResource Include="Resources\Default-Portrait%402x.png" />
