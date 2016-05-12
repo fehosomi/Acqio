@@ -27,6 +27,20 @@ namespace Acqio.Clients.Views.Menu
                 TargetType = typeof(ClienteListView)
             });
 
+            data.Add(new Models.MenuItemModel()
+            {
+                Title = "Meus Clientes",
+                IconSource = "list.png",
+                TargetType = typeof(ClienteListView)
+            });
+
+            data.Add(new Models.MenuItemModel()
+            {
+                Title = "Clientes Pendentes",
+                IconSource = "list.png",
+                TargetType = typeof(ClienteListView)
+            });
+
             //data.Add(new Models.MenuItemModel()
             //{
             //    Title = "Leads",

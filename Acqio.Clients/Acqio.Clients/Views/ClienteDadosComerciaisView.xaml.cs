@@ -14,6 +14,9 @@ namespace Acqio.Clients.Views
         {
             InitializeComponent();
             this.BindingContext = ClienteView.ClienteModel;
+
+            this.pcrOutras.ItemsSource = ClienteView.ClienteModel.OutrasRecebList;
+            this.pcrOutras.SelectedItem = ClienteView.ClienteModel.OutrasReceb;
         }
     }
 }

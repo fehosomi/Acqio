@@ -13,7 +13,6 @@
 
       <Style x:Key="Title" TargetType="Label" >
         <Setter Property="Font" Value="14,Bold" ></Setter>
-        <Setter Property="TextColor" Value="#162135" ></Setter>
       </Style>
 
       <Style x:Key="Label" TargetType="Label" >

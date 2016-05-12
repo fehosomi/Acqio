@@ -2,52 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Acqio.Clients.Views.ClienteDadosEmpresaView"
+             xmlns:userControls="clr-namespace:Acqio.Clients.UserControls;assembly=Acqio.Clients"
              Title="Dados da Empresa" >
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
     <StackLayout Padding="10" Spacing="5">
-      <!--<Entry x:Name="etxDataVisita" Text="{Binding DataVisita}" Placeholder="Data Visita" Style="{StaticResource Entry}"></Entry>-->
-      <!--<DatePicker VerticalOptions="Start" Date="{Binding DataVisita}" >
-      <DatePicker.Format>dd/MM/yyyy HH:mm</DatePicker.Format>
-    </DatePicker>
-    <TimePicker VerticalOptions="Start" Time="{Binding DataVisita}" >
-    </TimePicker>-->
-      <Frame OutlineColor="Gray" Padding="5" BackgroundColor="White">
-        <Label Text="Dados da Empresa" Style="{StaticResource Title}"></Label>
-      </Frame>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Dados da Empresa" VerticalOptions="Center" Style="{StaticResource Title}"></Label>
+        <Button Text="Foto" HorizontalOptions="EndAndExpand" x:Name="GetPhotoButton" Clicked="GetPhotoButton_OnClicked"></Button>
+        <Button Text="Imagem" HorizontalOptions="EndAndExpand" x:Name="LoadImageButton" Clicked="LoadImageButton_OnClicked"></Button>
+      </StackLayout>
+      <ActivityIndicator x:Name="activityIndicator"></ActivityIndicator>
       <Label Text="Data Visita" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding DataVisita}" Placeholder="Data Visita" Style="{StaticResource Entry}"></Entry>
-      <!--<Label Text="Data Abertura" Style="{StaticResource Label}"></Label>-->
-      <!--<DatePicker Date="{Binding DataAbertura}" Style="{StaticResource Entry}"></DatePicker>-->
+      <!--<Label Text="Data Abertura" Style="{StaticResource Label}"></Label>
+      <DatePicker Date="{Binding DataAbertura}" Style="{StaticResource Entry}"></DatePicker>-->
       <Label Text="Razão Social" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding RazaoSocial}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Nome Fantasia" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding NomeFantasia}" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxNomeFantasia" Text="{Binding NomeFantasia}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Razão Social" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding CNPJ}" Placeholder="00.000.000/0000-00" Style="{StaticResource Entry}"></Entry>
       <Label Text="Inscrição Estadual" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding IE}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Endereço" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding Endereco}" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxEndereco" Text="{Binding Endereco}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Número" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding Numero}" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxNumero" Text="{Binding Numero}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Complemento" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding Complemento}" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxComplemento" Text="{Binding Complemento}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Bairro" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding Bairro}" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxBairro" Text="{Binding Bairro}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Cidade" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding Cidade}" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxCidade" Text="{Binding Cidade}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Estado" Style="{StaticResource Label}"></Label>
-      <Picker x:Name="pcrUF" SelectedIndex="{Binding UF}" Style="{StaticResource Entry}"></Picker>
+      <userControls:BindablePicker Title="Estado" x:Name="pcrUF" Style="{StaticResource Entry}"></userControls:BindablePicker>
       <Label Text="CEP" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding CEP}" Placeholder="00000-000" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxCEP" Text="{Binding CEP}" Placeholder="00000-000" Style="{StaticResource Entry}"></Entry>
       <Label Text="Telefone" Style="{StaticResource Label}"></Label>
-      <Entry Keyboard="Telephone" Text="{Binding Telefone}" Placeholder="(99) 9999-9999" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxTelefone" Keyboard="Telephone" Text="{Binding Telefone}" Placeholder="(99) 9999-9999" Style="{StaticResource Entry}"></Entry>
       <Label Text="Celular" Style="{StaticResource Label}"></Label>
-      <Entry Keyboard="Telephone" Text="{Binding Celular}" Placeholder="(99) 9999-9999" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxCelular" Keyboard="Telephone" Text="{Binding Celular}" Placeholder="(99) 9999-9999" Style="{StaticResource Entry}"></Entry>
       <Label Text="Site" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding Site}" Placeholder="Site" Style="{StaticResource Entry}"></Entry>
+      <Entry x:Name="etxSite" Text="{Binding Site}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Qtde POS WiFi" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding QtdePosWifi}" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding QtdePosWiFiStr}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Qtde POS GPRS" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding QtdePosGPRS}" Style="{StaticResource Entry}"></Entry>
       <Label Text="MCC" Style="{StaticResource Label}"></Label>

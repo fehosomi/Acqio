@@ -2,30 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Acqio.Clients.Views.ClienteDadosRepView"
+             xmlns:userControls="clr-namespace:Acqio.Clients.UserControls;assembly=Acqio.Clients"
              Title="Dados Representante Legal">
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
     <StackLayout Padding="20" Spacing="20">
-      <Label Text="Dados Representante Legal"></Label>
-      <Entry Text="{Binding Nome}" Placeholder="Nome" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding DataNascimento}" Placeholder="Data Nascimento" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding NomeMae}" Placeholder="Nome da Mãe" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding RG}" Placeholder="RG" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Emissor}" Placeholder="Emissor" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding DataExpedicao}" Placeholder="Data Expedição" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding CPF}" Placeholder="CPF" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Profissao}" Placeholder="Profissão" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding EstadoCivil}" Placeholder="Estado Civil" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding NomeConjuge}" Placeholder="Nome Cônjuge" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Endereco}" Placeholder="Endereço" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Numero}" Placeholder="Número" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Complemento}" Placeholder="Complemento" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Bairro}" Placeholder="Bairro" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Cidade}" Placeholder="Cidade" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding UF}" Placeholder="UF" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding CEP}" Placeholder="CEP" Style="{StaticResource Entry}"></Entry>
-      <Entry Keyboard="Telephone" Text="{Binding Telefone}" Placeholder="Telefone" Style="{StaticResource Entry}"></Entry>
-      <Entry Keyboard="Telephone" Text="{Binding Celular}" Placeholder="Celular" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding Email}" Placeholder="E-mail" Style="{StaticResource Entry}"></Entry>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Representante Legal" VerticalOptions="Center" Style="{StaticResource Title}"></Label>
+        <Button Text="Foto" HorizontalOptions="EndAndExpand" x:Name="GetPhotoButton" Clicked="GetPhotoButton_OnClicked"></Button>
+        <Button Text="Imagem" HorizontalOptions="EndAndExpand" x:Name="LoadImageButton" Clicked="LoadImageButton_OnClicked"></Button>
+      </StackLayout>
+      <ActivityIndicator x:Name="activityIndicator"></ActivityIndicator>
+      <Label Text="Nome" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxNome" Text="{Binding RepNome}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Data Nascimento" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepDataNascimento}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Nome da Mãe" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepNomeMae}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="RG" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepRG}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Órgam Emissor" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepEmissor}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Data Expedição" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepDataExpedicao}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="CPF" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepCPF}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Profissão" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepProfissao}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Estado Civil" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepEstadoCivil}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Nome Cônjuge" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepNomeConjuge}" Style="{StaticResource Entry}"></Entry>
+      <Label x:Name="etxEndereco" Text="Endereço" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding RepEndereco}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Número" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxNumero" Text="{Binding RepNumero}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Complemento" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxComplemento" Text="{Binding RepComplemento}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Bairro" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxBairro" Text="{Binding RepBairro}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Cidade" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxCidade" Text="{Binding RepCidade}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Estado" Style="{StaticResource Label}"></Label>
+      <userControls:BindablePicker Title="Estado" x:Name="pcrUF" Style="{StaticResource Entry}"></userControls:BindablePicker>
+      <Entry Text="{Binding RepCEP}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Telefone" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxTelefone" Keyboard="Telephone" Text="{Binding RepTelefone}" Placeholder="(00) 0000-0000" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Celular" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxCelular" Keyboard="Telephone" Text="{Binding RepCelular}" Placeholder="(00) 0000-0000" Style="{StaticResource Entry}"></Entry>
+      <Label Text="E-mail" Style="{StaticResource Label}"></Label>
+      <Entry x:Name="etxEmail" Text="{Binding RepEmail}" Style="{StaticResource Entry}"></Entry>
 
       <Button x:Name="btnSave" Text="Salvar" Clicked="btnSaveClicked" Style="{StaticResource Button}"></Button>
     </StackLayout>

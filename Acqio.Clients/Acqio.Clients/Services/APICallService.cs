@@ -107,5 +107,26 @@ namespace Acqio.Clients.Services
                 return retorno;
             }
         }
+
+        public async Task<Dictionary<string, int>> PostAsyncGetNewId<T>(string method, T item) where T : class
+        {
+            Dictionary<string, int> values = new Dictionary<string, int>();
+            var client = new System.Net.Http.HttpClient();
+
+            var json = JsonConvert.SerializeObject(item);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(string.Format(ApiUrl, method), content);
+            if (response.IsSuccessStatusCode)
+            {
+                // Retorna o caminho para acessar o novo dado incluído, o último campo é o novo ID...
+                values.Add(String.Empty, Convert.ToInt32(response.Headers.Location.Segments[response.Headers.Location.Segments.Length - 1]));
+            }
+            else
+            {
+                string retorno = await response.Content.ReadAsStringAsync();
+                values.Add(retorno, 0);
+            }
+            return values;
+        }
     }
 }

@@ -23,17 +23,19 @@ namespace Acqio.Clients.Views
             this.Children.Add(new ClienteDadosBancoView());
             this.Children.Add(new ClienteDadosComerciaisView());
             this.Children.Add(new ClienteDadosRepView());
+            this.Children.Add(new ClienteAssinaturaView());
         }
 
         public ClienteView(ClienteModel clienteModel)
         {
             InitializeComponent();
             ClienteModel = clienteModel;
-            
+
             this.Children.Add(new ClienteDadosEmpresaView());
             this.Children.Add(new ClienteDadosBancoView());
             this.Children.Add(new ClienteDadosComerciaisView());
             this.Children.Add(new ClienteDadosRepView());
+            
         }
     }
 }

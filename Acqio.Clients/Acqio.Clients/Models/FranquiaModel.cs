@@ -9,8 +9,8 @@ namespace Acqio.Clients.Models
     public class FranquiaModel : ViewModel.ViewModelBase
     {
         public int FranquiaId { get; set; }
+        public string Nome { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-        public string CodIbge { get; set; }
     }
 }

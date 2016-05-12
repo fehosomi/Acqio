@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace Acqio.Clients.Models
     {
         public int FranquiaId { get; set; }
         public string Email { get; set; }
+        public string Nome { get; set; }
         public string Senha { get; set; }
         public int Tipo { get; set; }
+        public byte[] Assinatura { get; set; }
     }
 }

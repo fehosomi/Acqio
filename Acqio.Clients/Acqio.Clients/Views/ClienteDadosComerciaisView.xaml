@@ -2,18 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Acqio.Clients.Views.ClienteDadosComerciaisView"
+             xmlns:userControls="clr-namespace:Acqio.Clients.UserControls;assembly=Acqio.Clients"
              Title="Dados Comerciais">
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
     <StackLayout Padding="20" Spacing="20">
-      <Label Text="Dados Comerciais"></Label>
-      <Entry Text="{Binding ValorPos}" Placeholder="Valor Venda POS" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding FatPos}" Placeholder="Fat. Esperado/Mês" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding QtdeParcSemJuros}" Placeholder="Qtde. Parc. sem Juros Cliente" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding TaxaAntecipacao}" Placeholder="Taxa Antecip. Parcela" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Dados Comerciais" Style="{StaticResource Title}"></Label>
+      <Label Text="Valor Venda por POS" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding ValorPos}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Fatur. Esperado/Mês" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding FatPos}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Qtde. Parcelas s/ Juros p/ Cliente" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding QtdeParcSemJuros}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Taxa Antecipação por Parcela" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding TaxaAntecipacao}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Taxa por Parcela" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding TaxaParcela}" Placeholder="Taxa por Parcela" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding TaxaDebito}" Placeholder="Taxa Débido" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding TaxaCredito}" Placeholder="Taxa Crédito" Style="{StaticResource Entry}"></Entry>
-      <Entry Text="{Binding OutrasReceb}" Placeholder="Outras Formas Recebimento" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Taxa Débito" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding TaxaDebito}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Taxa Crédito" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding TaxaCredito}" Style="{StaticResource Entry}"></Entry>
+      <userControls:BindablePicker Title="Outras Formas Recebimento" x:Name="pcrOutras" Style="{StaticResource Entry}"></userControls:BindablePicker>
     </StackLayout>
   </ScrollView>
 </ContentPage>

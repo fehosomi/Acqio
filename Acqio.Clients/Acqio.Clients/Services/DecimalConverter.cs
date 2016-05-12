@@ -14,7 +14,9 @@ namespace Acqio.Clients.Services
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
+            {
                 return "0";
+            }
             decimal thedecimal = (decimal)value;
             return thedecimal.ToString();
         }
@@ -23,7 +25,9 @@ namespace Acqio.Clients.Services
         {
             string strValue = value as string;
             if (string.IsNullOrEmpty(strValue))
+            {
                 strValue = "0";
+            }
             decimal resultdecimal;
             if (decimal.TryParse(strValue, out resultdecimal))
             {

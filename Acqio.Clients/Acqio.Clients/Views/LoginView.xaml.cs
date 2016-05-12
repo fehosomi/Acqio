@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,25 @@ namespace Acqio.Clients.Views
         public LoginView()
         {
             InitializeComponent();
+
+            Services.APICallService service = new Services.APICallService();
+            var es = service.GetListAsync<Models.FranquiaModel>("Franquia", String.Empty).ContinueWith(t =>
+            {
+                if (t.Status == TaskStatus.RanToCompletion)
+                {
+                    List<Models.FranquiaModel> list = t.Result;
+
+                    ObservableCollection<string> franquiaList = new ObservableCollection<string>();
+
+                    foreach (var item in list)
+                    {
+                        franquiaList.Add(item.Cidade);
+                    }
+                     
+                    pcrFranquia.ItemsSource = franquiaList;
+                }
+            });
+
             this.BindingContext = new Models.UsuarioModel();
         }
 
@@ -23,6 +43,8 @@ namespace Acqio.Clients.Views
                 Models.UsuarioModel currentModel = ((Models.UsuarioModel)this.BindingContext);
 
                 Services.APICallService service = new Services.APICallService();
+
+                var franquia = pcrFranquia.SelectedItem;
 
                 currentModel.FranquiaId = 1;
                 string param = String.Format("FranquiaId={0}&Email={1}", currentModel.FranquiaId, currentModel.Email);
