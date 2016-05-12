@@ -16,7 +16,6 @@ namespace Acqio.Clients.Views.Menu
             Navigation.PushModalAsync(new LoginView());
 
             menuView = new MenuView();
-
             menuView.Menu.ItemSelected += (sender, e) => NavigateTo(e.SelectedItem as Models.MenuItemModel);
 
             Master = menuView;
@@ -30,7 +29,7 @@ namespace Acqio.Clients.Views.Menu
 
             Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
 
-            Detail = new NavigationPage(displayPage);
+            Detail = new NavigationPage(displayPage,);
 
             menuView.Menu.SelectedItem = null;
             IsPresented = false;

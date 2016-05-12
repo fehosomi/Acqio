@@ -27,6 +27,9 @@ namespace Acqio.Clients.Views
             this.BindingContext = ClienteView.ClienteModel;
             this.pcrUF.ItemsSource = ClienteView.ClienteModel.UFList;
             this.pcrUF.SelectedItem = ClienteView.ClienteModel.Estado;
+
+            this.pcrStatus.ItemsSource = ClienteView.ClienteModel.StatusList;
+            this.pcrStatus.SelectedItem = ClienteView.ClienteModel.Status;
         }
 
         private async void LoadImageButton_OnClicked(object sender, EventArgs e)

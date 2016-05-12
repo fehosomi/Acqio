@@ -14,6 +14,8 @@
       <ActivityIndicator x:Name="activityIndicator"></ActivityIndicator>
       <Label Text="Data Visita" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding DataVisita}" Placeholder="Data Visita" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Status" Style="{StaticResource Label}"></Label>
+      <userControls:BindablePicker Title="Status" x:Name="pcrStatus" Style="{StaticResource Entry}"></userControls:BindablePicker>
       <!--<Label Text="Data Abertura" Style="{StaticResource Label}"></Label>
       <DatePicker Date="{Binding DataAbertura}" Style="{StaticResource Entry}"></DatePicker>-->
       <Label Text="Razão Social" Style="{StaticResource Label}"></Label>

@@ -8,10 +8,10 @@
     <Label Text="Login" Style="{StaticResource Title}"></Label>
     <Label Text="Franquia" Style="{StaticResource Label}"></Label>
     <userControls:BindablePicker Title="Franquia" x:Name="pcrFranquia" Style="{StaticResource Entry}"></userControls:BindablePicker>
-    <Label Text="E-mail" Style="{StaticResource Label}"></Label>
-    <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="email@servidor.com" Style="{StaticResource Entry}"></Entry>
+    <Label Text="Usuário" Style="{StaticResource Label}"></Label>
+    <Entry Text="{Binding Email}" Style="{StaticResource Entry}"></Entry>
     <Label Text="Senha" Style="{StaticResource Label}"></Label>
-    <Entry Text="{Binding Senha}" IsPassword="True" Placeholder="Senha" Style="{StaticResource Entry}"></Entry>
+    <Entry Text="{Binding Senha}" IsPassword="True" Style="{StaticResource Entry}"></Entry>
     <Button x:Name="btnLogin" Text="Login" Clicked="btnLoginClicked" Style="{StaticResource Button}"></Button>
     <Button x:Name="btnReg" Text="Registrar-se" Clicked="btnRegClicked" Style="{StaticResource Button}"></Button>
   </StackLayout>

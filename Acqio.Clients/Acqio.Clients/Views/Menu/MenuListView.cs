@@ -22,45 +22,27 @@ namespace Acqio.Clients.Views.Menu
 
             data.Add(new Models.MenuItemModel()
             {
-                Title = "Lista Clientes",
+                Title = "Clientes Franquia",
                 IconSource = "list.png",
-                TargetType = typeof(ClienteListView)
+                TargetType = typeof(ClienteListView),
+                Param = new string[] { "", "Aprovado" }
             });
 
             data.Add(new Models.MenuItemModel()
             {
                 Title = "Meus Clientes",
                 IconSource = "list.png",
-                TargetType = typeof(ClienteListView)
+                TargetType = typeof(ClienteListView),
+                Param = new string[] { App.UsuarioModel.Login, "" }
             });
 
             data.Add(new Models.MenuItemModel()
             {
                 Title = "Clientes Pendentes",
                 IconSource = "list.png",
-                TargetType = typeof(ClienteListView)
+                TargetType = typeof(ClienteListView),
+                Param = new string[] { App.UsuarioModel.Login, "Análise" }
             });
-
-            //data.Add(new Models.MenuItemModel()
-            //{
-            //    Title = "Leads",
-            //    IconSource = "leads.png",
-            //    TargetType = typeof(LeadsPage)
-            //});
-
-            //data.Add(new Models.MenuItemModel()
-            //{
-            //    Title = "Accounts",
-            //    IconSource = "accounts.png",
-            //    TargetType = typeof(AccountsPage)
-            //});
-
-            //data.Add(new Models.MenuItemModel()
-            //{
-            //    Title = "Opportunities",
-            //    IconSource = "opportunities.png",
-            //    TargetType = typeof(OpportunitiesPage)
-            //});
 
             ItemsSource = data;
             VerticalOptions = LayoutOptions.FillAndExpand;

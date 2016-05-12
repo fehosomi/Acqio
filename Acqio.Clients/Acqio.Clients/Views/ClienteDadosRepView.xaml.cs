@@ -156,7 +156,8 @@ namespace Acqio.Clients.Views
         {
             try
             {
-                ClienteView.ClienteModel.EmailUsuario = App.UsuarioModel.Email;
+                ClienteView.ClienteModel.LoginUsuario = App.UsuarioModel.Login;
+                ClienteView.ClienteModel.NomeUsuario = App.UsuarioModel.Nome;
                 ClienteView.ClienteModel.FranquiaId = App.UsuarioModel.FranquiaId;
 
                 Services.APICallService service = new Services.APICallService();
@@ -175,7 +176,7 @@ namespace Acqio.Clients.Views
 
                 if (String.IsNullOrEmpty(retorno))
                 {
-                    await Navigation.PushAsync(new ClienteListView());
+                    await Navigation.PushAsync(new ClienteListView(App.UsuarioModel.Login, "Análise"));
                 }
                 else
                 {

@@ -13,5 +13,7 @@ namespace Acqio.Clients.Models
         public string IconSource { get; set; }
 
         public Type TargetType { get; set; }
+
+        public string[] Param { get; set; }
     }
 }

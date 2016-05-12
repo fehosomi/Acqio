@@ -10,12 +10,19 @@ namespace Acqio.Clients.Models
 {
     public class ClienteModel : ViewModel.ViewModelBase
     {
+        public ObservableCollection<string> StatusList;
         public ObservableCollection<string> TipoContaList;
         public ObservableCollection<string> OutrasRecebList;
         public ObservableCollection<string> UFList;
 
         public ClienteModel()
         {
+            StatusList = new ObservableCollection<string>();
+            StatusList.Add("Análise");
+            StatusList.Add("Aprovado");
+            StatusList.Add("Não Aprovado");
+            StatusList.Add("Cancelado");
+            
             TipoContaList = new ObservableCollection<string>();
             TipoContaList.Add("Corrente");
             TipoContaList.Add("Poupança");
@@ -57,7 +64,8 @@ namespace Acqio.Clients.Models
 
         public int ClienteId { get; set; }
         public int FranquiaId { get; set; }
-        public string EmailUsuario { get; set; }
+        public string LoginUsuario { get; set; }
+        public string NomeUsuario { get; set; }
         public string Status { get; set; }
         public System.DateTime DataVisita { get; set; }
         public Nullable<System.DateTime> DataAbertura { get; set; }

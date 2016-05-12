@@ -47,7 +47,7 @@ namespace Acqio.Clients.Views
                 var franquia = pcrFranquia.SelectedItem;
 
                 currentModel.FranquiaId = 1;
-                string param = String.Format("FranquiaId={0}&Email={1}", currentModel.FranquiaId, currentModel.Email);
+                string param = String.Format("FranquiaId={0}&Login={1}", currentModel.FranquiaId, currentModel.Login);
 
                 Models.UsuarioModel model = await service.GetAsync<Models.UsuarioModel>("Usuario", param);
                 if (model != null)
@@ -66,7 +66,7 @@ namespace Acqio.Clients.Views
                 else
                 {
                     Services.MessageService message = new Services.MessageService();
-                    await message.ShowAsync("Login", "E-mail inválido");
+                    await message.ShowAsync("Login", "Usuário inválido");
                 }
             
             }

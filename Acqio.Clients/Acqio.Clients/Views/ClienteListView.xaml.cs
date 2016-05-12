@@ -16,12 +16,12 @@ namespace Acqio.Clients.Views
         ClienteViewModel ViewModel = new ClienteViewModel();
         public ObservableCollection<Models.ClienteModel> Items { get; set; }
 
-        public ClienteListView()
+        public ClienteListView(string login, string status)
         {
             InitializeComponent();
 
             Services.APICallService service = new Services.APICallService();
-            string param = String.Format("FranquiaId={0}&Email={1}&ClienteId=0", App.UsuarioModel.FranquiaId, App.UsuarioModel.Email);
+            string param = String.Format("FranquiaId={0}&Login={1}&ClienteId=0&Status={2}", App.UsuarioModel.FranquiaId, login, status);
             var es = service.GetListAsync<Models.ClienteModel>("Cliente", param).ContinueWith(t =>
             {
                 if (t.Status == TaskStatus.RanToCompletion)
