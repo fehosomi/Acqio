@@ -1,29 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             
+             xmlns:acr="clr-namespace:Acr.XamForms.SignaturePad;assembly=Acr.XamForms.SignaturePad"   
              x:Class="Acqio.Clients.Views.ClienteAssinaturaView">
 <ScrollView>
         <StackLayout>
-          <!--xmlns:acr="clr-namespace:Acr.XamForms.SignaturePad;assembly=Acr.XamForms.SignaturePad"-->
-            <!--<acr:SignaturePadView
-                x:Name="padView"
+            <acr:SignaturePadView
+                x:Name="pdwAssinatura"
                 HeightRequest="320"
                 WidthRequest="240"
-            
                 BackgroundColor="White"
-                CaptionText="Caption This"
+                CaptionText="Cliente"
                 CaptionTextColor="Black"
-                ClearText="Clear Me!"
+                ClearText="Limpar"
                 ClearTextColor="Red"
-                PromptText="Prompt Here"
+                PromptText="Assinatura"
                 PromptTextColor="Red"
                 SignatureLineColor="Aqua"
                 StrokeColor="Black"
                 StrokeWidth="2"
-            />-->
-            
-            <Button Text="Salvar" />
+            />
+            <Button Text="Salvar" Clicked="btnSaveClicked" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -17,6 +17,12 @@ namespace Acqio.Clients.Views
 
             this.pcrOutras.ItemsSource = ClienteView.ClienteModel.OutrasRecebList;
             this.pcrOutras.SelectedItem = ClienteView.ClienteModel.OutrasReceb;
+            this.pcrOutras.SelectedIndexChanged += PcrOutras_SelectedIndexChanged;
+        }
+
+        private void PcrOutras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClienteView.ClienteModel.OutrasReceb = this.pcrOutras.Items[this.pcrOutras.SelectedIndex];
         }
     }
 }

@@ -27,12 +27,22 @@ namespace Acqio.Clients.Views.Menu
             if (menu == null)
                 return;
 
-            Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
+            Page displayPage = (Page)Activator.CreateInstance(menu.TargetType, menu.Param);
 
-            Detail = new NavigationPage(displayPage,);
+            Detail = new NavigationPage(displayPage);
 
             menuView.Menu.SelectedItem = null;
             IsPresented = false;
         }
+
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+
+        //    if (App.UsuarioModel.Login == null)
+        //    {
+        //        Navigation.PushModalAsync(new LoginView());
+        //    }
+        //}
     }
 }

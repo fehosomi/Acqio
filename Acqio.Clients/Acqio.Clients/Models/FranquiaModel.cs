@@ -12,5 +12,8 @@ namespace Acqio.Clients.Models
         public string Nome { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
+        public string FDA { get; set; }
+        public string Telefone { get; set; }
+        public string Email { get; set; }
     }
 }

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Acqio.Clients.Services;
+using Acqio.Clients.Services.IServices;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +14,11 @@ namespace Acqio.Clients.Views
 {
     public partial class UsuarioView : ContentPage
     {
-        public UsuarioView()
+        public UsuarioView(ObservableCollection<string> franquiaList)
         {
             InitializeComponent();
+            pcrFranquia.ItemsSource = franquiaList;
+
             this.BindingContext = new Models.UsuarioModel();
         }
 
@@ -20,8 +26,20 @@ namespace Acqio.Clients.Views
         {
             try
             {
+                if (pcrFranquia.SelectedItem == null)
+                {
+                    return;
+                }
+
                 Services.APICallService service = new Services.APICallService();
                 Models.UsuarioModel model = (Models.UsuarioModel)this.BindingContext;
+                model.FranquiaId = Convert.ToInt32(pcrFranquia.SelectedItem.ToString().Split('-')[0]);
+
+                //Stream strImage = pdwAssinatura.GetImage(Acr.XamForms.SignaturePad.ImageFormatType.Jpg);
+                //byte[] data = ((MemoryStream)strImage).ToArray();
+                //model.Assinatura = data;
+
+                //DependencyService.Get<IPicture>().SavePictureToDisk("ChartImage", data);
 
                 if (model.Senha != etxSenhaConf.Text)
                 {
@@ -30,13 +48,17 @@ namespace Acqio.Clients.Views
                     return;
                 }
 
-                model.FranquiaId = 1;
+                string retorno = await service.PostAsync<Models.UsuarioModel>("Usuario", model);
 
-                await service.PostAsync<Models.UsuarioModel>("Usuario", model);
-                model.Email = String.Empty;
-                model.Senha = String.Empty;
-
-                await Navigation.PopAsync();
+                if (String.IsNullOrEmpty(retorno))
+                {
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    MessageService message = new MessageService();
+                    await message.ShowAsync("Erro ao salvar", retorno);
+                }
             }
             catch (Exception ex)
             {

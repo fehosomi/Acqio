@@ -27,9 +27,31 @@ namespace Acqio.Clients.Views
             this.BindingContext = ClienteView.ClienteModel;
             this.pcrUF.ItemsSource = ClienteView.ClienteModel.UFList;
             this.pcrUF.SelectedItem = ClienteView.ClienteModel.Estado;
+            this.pcrUF.SelectedIndexChanged += PcrUF_SelectedIndexChanged;
 
             this.pcrStatus.ItemsSource = ClienteView.ClienteModel.StatusList;
             this.pcrStatus.SelectedItem = ClienteView.ClienteModel.Status;
+            this.pcrStatus.SelectedIndexChanged += PcrStatus_SelectedIndexChanged;
+        }
+
+        private void PcrUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClienteView.ClienteModel.Estado = this.pcrUF.Items[this.pcrUF.SelectedIndex];
+        }
+
+        private void PcrStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClienteView.ClienteModel.Status = this.pcrStatus.Items[this.pcrStatus.SelectedIndex];
+        }
+
+        protected override void OnDisappearing()
+        {
+            if (this.pcrStatus.SelectedItem != null)
+            {
+                ClienteView.ClienteModel.Status = this.pcrStatus.SelectedItem.ToString();
+            }
+
+            base.OnDisappearing();
         }
 
         private async void LoadImageButton_OnClicked(object sender, EventArgs e)

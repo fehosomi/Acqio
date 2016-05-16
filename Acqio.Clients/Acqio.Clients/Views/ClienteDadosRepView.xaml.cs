@@ -29,6 +29,12 @@ namespace Acqio.Clients.Views
 
             this.pcrUF.ItemsSource = ClienteView.ClienteModel.UFList;
             this.pcrUF.SelectedItem = ClienteView.ClienteModel.RepEstado;
+            this.pcrUF.SelectedIndexChanged += PcrUF_SelectedIndexChanged;
+        }
+
+        private void PcrUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClienteView.ClienteModel.RepEstado = this.pcrUF.Items[this.pcrUF.SelectedIndex];
         }
 
         private async void LoadImageButton_OnClicked(object sender, EventArgs e)
@@ -160,20 +166,10 @@ namespace Acqio.Clients.Views
                 ClienteView.ClienteModel.NomeUsuario = App.UsuarioModel.Nome;
                 ClienteView.ClienteModel.FranquiaId = App.UsuarioModel.FranquiaId;
 
-                Services.APICallService service = new Services.APICallService();
-
-                string retorno;
+                ClienteService service = new ClienteService();
                 ClienteModel clienteModel = (Models.ClienteModel)ClienteView.ClienteModel;
-
-                if (clienteModel.ClienteId == 0)
-                {
-                    retorno = await service.PostAsync<Models.ClienteModel>("Cliente", clienteModel);
-                }
-                else
-                {
-                    retorno = await service.PutAsync<Models.ClienteModel>("Cliente", clienteModel.ClienteId.ToString(), clienteModel);
-                }
-
+                string retorno = await service.Save(clienteModel);
+                
                 if (String.IsNullOrEmpty(retorno))
                 {
                     await Navigation.PushAsync(new ClienteListView(App.UsuarioModel.Login, "Análise"));

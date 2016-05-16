@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acqio.Clients.Views.Menu;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Acqio.Clients.Views
 {
     public partial class LoginView : ContentPage
     {
+        public ObservableCollection<string> franquiaList = new ObservableCollection<string>();
+
         public LoginView()
         {
             InitializeComponent();
@@ -22,11 +25,9 @@ namespace Acqio.Clients.Views
                 {
                     List<Models.FranquiaModel> list = t.Result;
 
-                    ObservableCollection<string> franquiaList = new ObservableCollection<string>();
-
                     foreach (var item in list)
                     {
-                        franquiaList.Add(item.Cidade);
+                        franquiaList.Add(item.FranquiaId + " - " + item.Nome);
                     }
                      
                     pcrFranquia.ItemsSource = franquiaList;
@@ -44,9 +45,9 @@ namespace Acqio.Clients.Views
 
                 Services.APICallService service = new Services.APICallService();
 
-                var franquia = pcrFranquia.SelectedItem;
+                var franquia = pcrFranquia.SelectedItem.ToString().Split('-')[0].Trim();
 
-                currentModel.FranquiaId = 1;
+                currentModel.FranquiaId = Convert.ToInt32(franquia);
                 string param = String.Format("FranquiaId={0}&Login={1}", currentModel.FranquiaId, currentModel.Login);
 
                 Models.UsuarioModel model = await service.GetAsync<Models.UsuarioModel>("Usuario", param);
@@ -81,7 +82,7 @@ namespace Acqio.Clients.Views
         {
             try
             {
-                await Navigation.PushModalAsync(new UsuarioView());
+                await Navigation.PushModalAsync(new UsuarioView(franquiaList));
             }
             catch (Exception ex)
             {

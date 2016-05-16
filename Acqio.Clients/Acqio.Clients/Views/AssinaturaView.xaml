@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:acr="clr-namespace:Acr.XamForms.SignaturePad;assembly=Acr.XamForms.SignaturePad"
+             x:Class="Acqio.Clients.Views.AssinaturaView">
+  <StackLayout x:Name="stcAssinatura">
+    <acr:SignaturePadView
+             x:Name="pdwAssinatura"
+             HeightRequest="320"
+             WidthRequest="240"
+             BackgroundColor="White"
+             CaptionText="Franqueado"
+             CaptionTextColor="Black"
+             ClearText="Limpar"
+             ClearTextColor="Red"
+             PromptText="Assinatura"
+             PromptTextColor="Red"
+             SignatureLineColor="Aqua"
+             StrokeColor="Black"
+             StrokeWidth="2"
+            />
+    <Button x:Name="btnSave" Text="Salvar" Clicked="btnSaveClicked" ></Button>
+  </StackLayout>
+</ContentPage>

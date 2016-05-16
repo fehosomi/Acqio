@@ -4,15 +4,19 @@
              x:Class="Acqio.Clients.Views.LoginView"
              xmlns:userControls="clr-namespace:Acqio.Clients.UserControls;assembly=Acqio.Clients"
              Title="Login">
-  <StackLayout Padding="20" Spacing="20">
-    <Label Text="Login" Style="{StaticResource Title}"></Label>
-    <Label Text="Franquia" Style="{StaticResource Label}"></Label>
-    <userControls:BindablePicker Title="Franquia" x:Name="pcrFranquia" Style="{StaticResource Entry}"></userControls:BindablePicker>
-    <Label Text="Usuário" Style="{StaticResource Label}"></Label>
-    <Entry Text="{Binding Email}" Style="{StaticResource Entry}"></Entry>
-    <Label Text="Senha" Style="{StaticResource Label}"></Label>
-    <Entry Text="{Binding Senha}" IsPassword="True" Style="{StaticResource Entry}"></Entry>
-    <Button x:Name="btnLogin" Text="Login" Clicked="btnLoginClicked" Style="{StaticResource Button}"></Button>
-    <Button x:Name="btnReg" Text="Registrar-se" Clicked="btnRegClicked" Style="{StaticResource Button}"></Button>
-  </StackLayout>
+  <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <StackLayout  Padding="10" Spacing="5">
+      <Label Text="Login" Style="{StaticResource Title}"></Label>
+      <Label Text="Franquia" Style="{StaticResource Label}"></Label>
+      <userControls:BindablePicker Title="Franquia" x:Name="pcrFranquia" Style="{StaticResource Entry}"></userControls:BindablePicker>
+      <Label Text="Usuário" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding Email}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Senha" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding Senha}" IsPassword="True" Style="{StaticResource Entry}"></Entry>
+      <StackLayout  Padding="10" Spacing="5" Orientation="Horizontal">
+        <Button x:Name="btnLogin" Text="Login" Clicked="btnLoginClicked" Style="{StaticResource Button}"></Button>
+        <Button x:Name="btnReg" Text="Registrar-se" Clicked="btnRegClicked" Style="{StaticResource Button}"></Button>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

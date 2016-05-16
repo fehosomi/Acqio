@@ -12,8 +12,10 @@ namespace Acqio.Clients.Models
         public int FranquiaId { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
+        public int Status { get; set; }
         public string Tipo { get; set; }
         public string Nome { get; set; }
+        public string Telefone { get; set; }
         public string Email { get; set; }
         public byte[] Assinatura { get; set; }
     }

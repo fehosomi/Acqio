@@ -17,13 +17,12 @@ namespace Acqio.Clients.Views
         {
             InitializeComponent();
             ClienteModel = new ClienteModel();
-            ClienteModel.DataVisita = DateTime.Now;
-            
+
             this.Children.Add(new ClienteDadosEmpresaView());
             this.Children.Add(new ClienteDadosBancoView());
             this.Children.Add(new ClienteDadosComerciaisView());
             this.Children.Add(new ClienteDadosRepView());
-            this.Children.Add(new ClienteAssinaturaView());
+            //this.Children.Add(new ClienteAssinaturaView());
         }
 
         public ClienteView(ClienteModel clienteModel)
@@ -35,7 +34,7 @@ namespace Acqio.Clients.Views
             this.Children.Add(new ClienteDadosBancoView());
             this.Children.Add(new ClienteDadosComerciaisView());
             this.Children.Add(new ClienteDadosRepView());
-            
+            //this.Children.Add(new ClienteAssinaturaView());
         }
     }
 }

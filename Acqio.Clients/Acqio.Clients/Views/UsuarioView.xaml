@@ -1,12 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:Acqio.Clients.UserControls;assembly=Acqio.Clients"
+             
              x:Class="Acqio.Clients.Views.UsuarioView">
-  <StackLayout Padding="20" Spacing="20">
-    <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="E-mail" Style="{StaticResource Entry}"></Entry>
-    <Entry Text="{Binding Senha}" IsPassword="True" Placeholder="Senha" Style="{StaticResource Entry}"></Entry>
-    <Entry Text="" x:Name="etxSenhaConf" IsPassword="True" Placeholder="Confirmar Senha" Style="{StaticResource Entry}"></Entry>
-    <Button x:Name="btnSave" Text="Salvar" Clicked="btnSaveClicked" ></Button>
-    <Button x:Name="btnCancel" Text="Cancelar" Clicked="btnCancelClicked" ></Button>
-  </StackLayout>
+  <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+    <StackLayout  Padding="10" Spacing="5">
+      <Label Text="Login" Style="{StaticResource Title}"></Label>
+      <Label Text="Franquia" Style="{StaticResource Label}"></Label>
+      <userControls:BindablePicker Title="Franquia" x:Name="pcrFranquia" Style="{StaticResource Entry}"></userControls:BindablePicker>
+      <Label Text="Login" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding Login}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Nome" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding Nome}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="E-mail" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding Email}" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Senha" Style="{StaticResource Label}"></Label>
+      <Entry Text="{Binding Senha}" IsPassword="True" Style="{StaticResource Entry}"></Entry>
+      <Label Text="Confirmar Senha" Style="{StaticResource Label}"></Label>
+      <Entry Text="" x:Name="etxSenhaConf" IsPassword="True" Placeholder="Confirmar Senha" Style="{StaticResource Entry}"></Entry>
+      <!--xmlns:acr="clr-namespace:Acr.XamForms.SignaturePad;assembly=Acr.XamForms.SignaturePad"   
+      <acr:SignaturePadView
+              x:Name="pdwAssinatura"
+              HeightRequest="320"
+              WidthRequest="240"
+              BackgroundColor="White"
+              CaptionText="Franqueado"
+              CaptionTextColor="Black"
+              ClearText="Limpar"
+              ClearTextColor="Red"
+              PromptText="Assinatura"
+              PromptTextColor="Red"
+              SignatureLineColor="Aqua"
+              StrokeColor="Black"
+              StrokeWidth="2"
+            />-->
+      <StackLayout  Padding="10" Spacing="5" Orientation="Horizontal">
+        <Button x:Name="btnSave" Text="Salvar" Clicked="btnSaveClicked" ></Button>
+        <Button x:Name="btnCancel" Text="Cancelar" Clicked="btnCancelClicked" ></Button>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

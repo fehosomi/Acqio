@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Acqio.Acqio" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="14" />
-	<application></application>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<application android:label="Acqio"></application>
 </manifest>

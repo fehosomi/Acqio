@@ -5,12 +5,12 @@
              xmlns:userControls="clr-namespace:Acqio.Clients.UserControls;assembly=Acqio.Clients"
              Title="Dados Comerciais">
   <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-    <StackLayout Padding="20" Spacing="20">
+    <StackLayout Padding="10" Spacing="5">
       <Label Text="Dados Comerciais" Style="{StaticResource Title}"></Label>
       <Label Text="Valor Venda por POS" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding ValorPos}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Fatur. Esperado/Mês" Style="{StaticResource Label}"></Label>
-      <Entry Text="{Binding FatPos}" Style="{StaticResource Entry}"></Entry>
+      <Entry Text="{Binding FatMes}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Qtde. Parcelas s/ Juros p/ Cliente" Style="{StaticResource Label}"></Label>
       <Entry Text="{Binding QtdeParcSemJuros}" Style="{StaticResource Entry}"></Entry>
       <Label Text="Taxa Antecipação por Parcela" Style="{StaticResource Label}"></Label>

@@ -12,13 +12,13 @@ namespace Acqio.Clients
 {
     public partial class App : Application
     {
-        public static UsuarioModel UsuarioModel;
+        public static UsuarioModel UsuarioModel = new UsuarioModel();
         
         public App()
         {
             InitializeComponent();
-
-            MainPage = new Views.Menu.RootView();
+            //MainPage = new Views.Menu.RootView();
+            MainPage = new AssinaturaView();
         }
     }
 }
